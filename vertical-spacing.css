@@ -1,0 +1,6 @@
+/* even-vertical-spacing */
+.spacing-y-0\.5 > * + * { margin-top: 0.5rem; }
+.spacing-y-1 > * + *    { margin-top: 1rem; }
+.spacing-y-1\.5 > * + * { margin-top: 1.5rem; }
+.spacing-y-2 > * + *    { margin-top: 2rem; }
+.spacing-y-4 > * + *    { margin-top: 4rem; }
