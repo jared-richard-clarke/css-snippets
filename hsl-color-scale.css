@@ -1,0 +1,18 @@
+:root {
+    /* hue angle: 0-360 degrees */
+    --hue: 0;
+    /* saturation: 0-100% */
+    --saturation: 75%;
+    /* color scale */
+    --color-20: hsl(var(--hue), var(--saturation), 20%);
+    --color-30: hsl(var(--hue), var(--saturation), 30%);
+    --color-40: hsl(var(--hue), var(--saturation), 40%);
+    --color-50: hsl(var(--hue), var(--saturation), 50%);
+    --color-60: hsl(var(--hue), var(--saturation), 60%);
+    /* complementary color scale */
+    --complement-20: hsl(calc(var(--hue) + 180), var(--saturation), 20%);
+    --complement-30: hsl(calc(var(--hue) + 180), var(--saturation), 30%);
+    --complement-40: hsl(calc(var(--hue) + 180), var(--saturation), 40%);
+    --complement-50: hsl(calc(var(--hue) + 180), var(--saturation), 50%);
+    --complement-60: hsl(calc(var(--hue) + 180), var(--saturation), 60%);
+}
