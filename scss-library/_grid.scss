@@ -3,7 +3,7 @@
 @mixin grid($columns: 12) {
   
   $default-columns: 12;
-  // ensure $columns are a whole number > 0.
+  // ensure $columns is a whole number > 0.
   $columns: if(
     type-of($columns) != "number" or math.round($columns) == 0,
     $default-columns,
