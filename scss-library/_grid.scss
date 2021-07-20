@@ -1,0 +1,24 @@
+@use "sass:math";
+
+@mixin grid($columns: 12) {
+  
+  $default-columns: 12;
+  // ensure $columns are a whole number > 0.
+  $columns: if(
+    type-of($columns) != "number" or math.round($columns) == 0,
+    $default-columns,
+    math.abs(math.round($columns))
+  );
+  $column-start: 1;
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat($columns, minmax(0, 1fr));
+  }
+
+  @for $index from $column-start through $columns {
+    .columns-#{$index} {
+      grid-column: span $index;
+    }
+  }
+}
