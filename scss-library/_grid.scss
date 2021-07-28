@@ -1,22 +1,22 @@
 @use "sass:math";
 
 @mixin grid($columns: 12) {
-  
-  $default-columns: 12;
-  // ensure $columns is a whole number > 0.
-  $columns: if(
-    type-of($columns) != "number" or math.round($columns) == 0,
-    $default-columns,
-    math.abs(math.round($columns))
-  );
-  $column-start: 1;
+  $max-columns: 24;
+  $min-columns: 1;
+  $rounded: math.round($columns);
+  // ensure $columns is a whole number between $min-columns and $max-columns.
+  @if type-of($rounded) != "number" or $rounded < $min-columns or $rounded > $max-columns {
+    @error "$columns must be a whole number between 1 and 24";
+  } @else {
+    $columns: $rounded;
+  }
 
   .grid {
     display: grid;
     grid-template-columns: repeat($columns, minmax(0, 1fr));
   }
 
-  @for $index from $column-start through $columns {
+  @for $index from $min-columns through $columns {
     .columns-#{$index} {
       grid-column: span $index;
     }
