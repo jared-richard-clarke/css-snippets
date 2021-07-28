@@ -1,0 +1,52 @@
+@mixin root(
+  $color-primary: null,
+  $color-secondary: null,
+  $color-tertiary: null,
+  $font-stack: null,
+  $font-size: null
+) {
+  :root {
+    font-size: 16px;
+    font-size: if($font-size, $font-size, calc(14px + 0.225vw));
+    font-family: if(
+      $font-stack,
+      $font-stack,
+      (
+        system-ui,
+        -apple-system,
+        "Segoe UI",
+        Roboto,
+        "Helvetica Neue",
+        Arial,
+        "Noto Sans",
+        "Liberation Sans",
+        sans-serif
+      )
+    );
+
+    @if $color-primary {
+      --color-primary: #{$color-primary};
+    }
+
+    @if $color-secondary {
+      --color-secondary: #{$color-secondary};
+    }
+
+    @if $color-tertiary {
+      --color-tertiary: #{$color-tertiary};
+    }
+    @content;
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    :root {
+      scroll-behavior: smooth;
+    }
+  }
+}
