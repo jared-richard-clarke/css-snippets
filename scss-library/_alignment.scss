@@ -1,0 +1,46 @@
+$scalars: (
+  "1": 0.25rem,
+  "2": 0.5rem,
+  "3": 0.75rem,
+  "4": 1rem,
+  "5": 1.25rem
+);
+
+@mixin gap($map: $scalars) {
+  @each $key, $value in $map {
+    .gap-#{$key} {
+      gap: $value;
+    }
+    .gap-y-#{$key} {
+      row-gap: $value;
+    }
+    .gap-x-#{$key} {
+      column-gap: $value;
+    }
+  }
+}
+@mixin place-items {
+    .place-items-start {
+        place-items: start;
+    }
+    .place-items-center {
+        place-items: center;
+    }
+    .place-items-end {
+        place-items: end;
+    }
+}
+@mixin place-self {
+    .place-self-start {
+        place-self: start;
+    }
+    .place-self-center {
+        place-self: center;
+    }
+    .place-self-end {
+        place-self: end;
+    }
+    .place-self-stretch {
+        place-self: stretch;
+    }
+}
