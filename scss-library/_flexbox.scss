@@ -1,0 +1,27 @@
+@mixin flexbox {
+  // display
+  .flex {
+    display: flex;
+  }
+  // direction
+  .flex-row {
+    flex-direction: row;
+  }
+  .flex-column {
+    flex-direction: column;
+  }
+  // wrapping
+  .flex-wrap {
+    flex-wrap: wrap;
+  }
+  // flex-properties
+  .flex-1 {
+    flex: 1 1 0%;
+  }
+  .flex-auto {
+    flex: 1 1 auto;
+  }
+  .flex-initial {
+    flex: 0 1 auto;
+  }
+}
