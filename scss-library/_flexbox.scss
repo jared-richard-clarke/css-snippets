@@ -1,23 +1,19 @@
 @mixin flexbox {
-  // display
   .flex {
     display: flex;
   }
-  // direction
   .flex-row {
     flex-direction: row;
   }
   .flex-column {
     flex-direction: column;
   }
-  // wrapping
   .flex-nowrap {
     flex-wrap: nowrap;
   }
   .flex-wrap {
     flex-wrap: wrap;
   }
-  // flex-properties
   .flex-1 {
     flex: 1 1 0%;
   }
